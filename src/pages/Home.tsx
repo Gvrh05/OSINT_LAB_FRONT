@@ -37,7 +37,6 @@ const Home = () => {
             </div>
             <div className="hero-links">
               <Link to="/oij" className="hero-primary-link">Explorar OIJ <ArrowRight size={17} /></Link>
-              <Link to="/zonas" className="hero-primary-link">Explorar Zonas <ArrowRight size={17} /></Link>
               <Link to="/fuentes" className="hero-secondary-link">Ver fuentes</Link>
             </div>
           </div>

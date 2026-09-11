@@ -1,4 +1,4 @@
-import { ArrowRight, Landmark, MapPin, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Landmark, MapPinned, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Sources = () => (
@@ -32,11 +32,11 @@ const Sources = () => (
       </Link>
 
       <Link to="/zonas" className="source-card source-card-active">
-        <div className="source-card-top"><div className="source-card-icon"><MapPin size={24} /></div><span className="source-card-state active"><i />Activa</span></div>
-        <span className="source-institution">OPENSTREETMAP · OVERPASS API</span>
-        <h2>Explorador Territorial</h2>
-        <p>Infraestructura y puntos de interés geolocalizados por cantón, consultados desde Overpass API.</p>
-        <div className="source-tags"><span>GeoJSON</span><span>84 cantones</span><span>Cobertura nacional</span></div>
+        <div className="source-card-top"><div className="source-card-icon"><MapPinned size={24} /></div><span className="source-card-state active"><i />Activa</span></div>
+        <span className="source-institution">OPENSTREETMAP</span>
+        <h2>Explorador territorial</h2>
+        <p>Infraestructura y puntos de interés por cantón consultados a la API pública de Overpass.</p>
+        <div className="source-tags"><span>API de Overpass</span><span>84 cantones</span><span>Licencia ODbL</span></div>
         <div className="source-card-footer">Explorar fuente <ArrowRight size={17} /></div>
       </Link>
     </div>

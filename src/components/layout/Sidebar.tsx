@@ -5,7 +5,6 @@ import {
   ShieldCheck,
   Info,
   Landmark,
-  MapPin,
 } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
@@ -83,17 +82,12 @@ const Sidebar = () => {
           <span className="source-status active-status">Activo</span>
         </NavLink>
 
-        <NavLink
-          to="/zonas"
-          className={({ isActive }) =>
-            `sidebar-link ${isActive ? 'active' : ''}`
-          }
-        >
-          <MapPin size={19} />
-          <span>Zonas</span>
+        <div className="sidebar-link disabled">
+          <Database size={19} />
+          <span>Fuente 3</span>
 
-          <span className="source-status active-status">Activo</span>
-        </NavLink>
+          <span className="source-status">Próximamente</span>
+        </div>
 
         <span className="sidebar-section sources-title">INFORMACIÓN</span>
 

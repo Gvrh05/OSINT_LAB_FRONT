@@ -33,9 +33,3 @@ export interface CantonsResponse {
   data: Canton[];
   meta: OsmMeta;
 }
-
-export interface ZonasCategoryItem {
-  key: string;
-  label: string;
-  count: number;
-}

@@ -1,21 +1,30 @@
 import type {
   CantonsResponse,
   PoiCollection,
-} from '../types/zonas.types';
+} from '../types/osm.types';
 
 const API_URL =
   import.meta.env.VITE_API_URL ?? 'http://localhost:3000/api';
 
+/**
+ * Realiza una petición al backend.
+ */
 async function request<T>(endpoint: string): Promise<T> {
-  const response = await fetch(`${API_URL}${endpoint}`, {
-    method: 'GET',
-    headers: {
-      Accept: 'application/json',
-    },
-  });
+  let response: Response;
+
+  try {
+    response = await fetch(`${API_URL}${endpoint}`, {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+      },
+    });
+  } catch {
+    throw new Error('No se pudo conectar con el servidor de datos.');
+  }
 
   if (!response.ok) {
-    let message = 'No fue posible obtener la información de OpenStreetMap.';
+    let message = 'No se pudo obtener la información territorial.';
 
     try {
       const error = await response.json();
@@ -35,15 +44,28 @@ async function request<T>(endpoint: string): Promise<T> {
   return response.json() as Promise<T>;
 }
 
-export function getCantones(): Promise<CantonsResponse> {
+/**
+ * Obtiene los cantones disponibles para la exploración.
+ */
+export function getOsmCantons(): Promise<CantonsResponse> {
   return request<CantonsResponse>('/osm/cantons');
 }
 
-export function getPois(
+/**
+ * Obtiene los puntos de interés de un cantón.
+ *
+ * Ejemplo:
+ * /api/osm/pois?canton=4069041&categoria=salud
+ */
+export function getOsmPois(
   cantonId: number,
   categoria?: string,
 ): Promise<PoiCollection> {
   const params = new URLSearchParams({ canton: String(cantonId) });
-  if (categoria) params.set('categoria', categoria);
+
+  if (categoria) {
+    params.set('categoria', categoria);
+  }
+
   return request<PoiCollection>(`/osm/pois?${params.toString()}`);
 }

@@ -1,28 +1,27 @@
 import { useEffect } from 'react';
 import L from 'leaflet';
 import { useMap } from 'react-leaflet';
+import type { PoiFeature } from '../types/osm.types';
 
-import type { PoiFeature } from '../types/zonas.types';
+export const CATEGORY_COLORS: Record<string, string> = {
+  salud: '#c0392b',
+  educacion: '#2980b9',
+  emergencia: '#e67e22',
+  combustible: '#8e44ad',
+  banco: '#27ae60',
+  supermercado: '#16a085',
+  culto: '#7f8c8d',
+  otros: '#95a5a6',
+};
 
-interface PoisLayerProps {
-  features: PoiFeature[];
-  categoryColors: Record<string, string>;
-  defaultColor?: string;
-}
-
-export default function PoisLayer({
-  features,
-  categoryColors,
-  defaultColor = '#64748b',
-}: PoisLayerProps) {
+export function PoisLayer({ features }: { features: PoiFeature[] }) {
   const map = useMap();
 
   useEffect(() => {
     const geo = L.geoJSON(features as unknown as GeoJSON.FeatureCollection, {
       pointToLayer: (feature, latlng) => {
         const props = feature.properties as PoiFeature['properties'];
-        const color =
-          categoryColors[props.category] ?? defaultColor;
+        const color = CATEGORY_COLORS[props.category] ?? CATEGORY_COLORS.otros;
 
         return L.circleMarker(latlng, {
           radius: 6,
@@ -32,7 +31,6 @@ export default function PoisLayer({
           fillOpacity: 0.9,
         });
       },
-
       onEachFeature: (feature, layer) => {
         const props = feature.properties as PoiFeature['properties'];
         layer.bindPopup(
@@ -57,7 +55,7 @@ export default function PoisLayer({
     return () => {
       map.removeLayer(geo);
     };
-  }, [map, features, categoryColors, defaultColor]);
+  }, [map, features]);
 
   return null;
 }

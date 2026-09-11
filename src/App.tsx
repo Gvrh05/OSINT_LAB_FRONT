@@ -8,7 +8,7 @@ import About from './pages/About';
 import Search from './pages/Search';
 import OijPage from './OIJ/pages/OijPage';
 import TsePage from './TSE/pages/TsePage';
-import ZonasPage from './ZONAS/pages/ZonasPage';
+import ZonasPage from './OSM/pages/ZonasPage';
 
 import './App.css';
 
