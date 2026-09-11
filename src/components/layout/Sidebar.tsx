@@ -70,12 +70,17 @@ const Sidebar = () => {
           <span className="source-status active-status">Activo</span>
         </NavLink>
 
-        <div className="sidebar-link disabled">
+        <NavLink
+          to="/tse"
+          className={({ isActive }) =>
+            `sidebar-link ${isActive ? 'active' : ''}`
+          }
+        >
           <Landmark size={19} />
-          <span>Fuente 2</span>
+          <span>TSE</span>
 
-          <span className="source-status">Próximamente</span>
-        </div>
+          <span className="source-status active-status">Activo</span>
+        </NavLink>
 
         <div className="sidebar-link disabled">
           <Database size={19} />

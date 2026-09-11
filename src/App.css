@@ -2924,3 +2924,459 @@
     border-right: 0;
   }
 }
+
+/* ==================================================
+   TSE — PADRÓN NACIONAL ELECTORAL
+================================================== */
+
+.tse-page {
+  min-height: 100vh;
+}
+
+.tse-hero {
+  position: relative;
+  padding: 95px 0 90px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 78% 35%,
+      rgba(129, 140, 248, 0.1),
+      transparent 28%
+    ),
+    #07111f;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.tse-hero-grid {
+  gap: 90px;
+}
+
+.tse-chart-total {
+  width: fit-content;
+  flex-shrink: 0;
+}
+
+.tse-stats-section {
+  margin-bottom: 70px;
+}
+
+.tse-chart-section {
+  margin: 22px 0 70px;
+}
+
+.tse-error-section {
+  padding: 40px 0 10px;
+}
+
+.tse-error-section .oij-search-state {
+  min-height: 280px;
+}
+
+.tse-error-button {
+  margin-top: 18px;
+}
+
+.tse-error-button.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Provincias */
+
+.tse-provincias {
+  display: grid;
+  gap: 10px;
+}
+
+.tse-provincia-card {
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(13, 29, 47, 0.9), rgba(7, 18, 31, 0.9));
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tse-provincia-card.expanded {
+  border-color: rgba(56, 189, 248, 0.25);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+.tse-provincia-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 200px 1fr 150px 28px;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.tse-provincia-header:hover {
+  background: rgba(148, 163, 184, 0.03);
+}
+
+.tse-provincia-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e2edf7;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.tse-provincia-name svg {
+  color: #a78bfa;
+  flex-shrink: 0;
+}
+
+.tse-provincia-track {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.08);
+}
+
+.tse-provincia-track i {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.5s ease;
+}
+
+.tse-provincia-metric {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  justify-content: flex-end;
+}
+
+.tse-provincia-metric strong {
+  color: #f8fafc;
+  font-size: 14px;
+  letter-spacing: -0.4px;
+}
+
+.tse-provincia-metric small {
+  color: #71869c;
+  font-size: 10px;
+}
+
+.tse-provincia-toggle {
+  display: grid;
+  place-items: center;
+  color: #60758b;
+}
+
+.tse-provincia-body {
+  padding: 4px 22px 22px;
+  border-top: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.tse-provincia-note {
+  margin: 14px 0 12px;
+  color: #6f8398;
+  font-size: 9px;
+}
+
+.tse-cantones-list {
+  display: grid;
+  gap: 8px;
+}
+
+.tse-canton-row {
+  display: grid;
+  grid-template-columns: 190px 1fr 110px;
+  align-items: center;
+  gap: 14px;
+}
+
+.tse-canton-row > span {
+  color: #c2d1df;
+  font-size: 10px;
+}
+
+.tse-canton-track {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.07);
+}
+
+.tse-canton-track i {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.tse-canton-row strong {
+  color: #8194aa;
+  font-size: 11px;
+  text-align: right;
+}
+
+/* Explorador agregado */
+
+.tse-explorador-section {
+  margin: 22px 0 70px;
+}
+
+.tse-explorador-panel {
+  overflow: hidden;
+  border: 1px solid rgba(56, 189, 248, 0.13);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(13, 29, 47, 0.98), rgba(7, 18, 31, 0.98));
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+}
+
+.tse-explorador-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.09);
+  background: rgba(4, 13, 24, 0.32);
+}
+
+.tse-tabs {
+  display: flex;
+  gap: 6px;
+}
+
+.tse-tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 14px;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 9px;
+  color: #7d91a6;
+  background: transparent;
+  font-size: 9px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.tse-tabs button.active {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.tse-search-input {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 260px;
+  flex: 1;
+  max-width: 420px;
+  padding: 0 13px;
+  height: 42px;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 9px;
+  color: #8499ae;
+  background: #0b1b2d;
+}
+
+.tse-search-input:focus-within {
+  border-color: rgba(56, 189, 248, 0.55);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.08);
+}
+
+.tse-search-input input {
+  width: 100%;
+  border: 0;
+  outline: none;
+  color: #dce8f4;
+  background: transparent;
+  font-size: 11px;
+}
+
+.tse-search-input input::placeholder {
+  color: #4f6579;
+}
+
+/* Tabla */
+
+.tse-table {
+  overflow: hidden;
+}
+
+.tse-table-header,
+.tse-table-row {
+  display: grid;
+  gap: 14px;
+  padding: 12px 20px;
+}
+
+.tse-table-header {
+  color: #60758b;
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: rgba(148, 163, 184, 0.04);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.06);
+}
+
+.tse-table-header.tse-cantones-header,
+.tse-cantones-header + .tse-table-body > .tse-table-row {
+  grid-template-columns: 160px 1fr 120px;
+}
+
+.tse-table-header:not(.tse-cantones-header),
+.tse-distrito-row {
+  grid-template-columns: 90px 140px 150px 1fr;
+}
+
+.tse-table-body {
+  max-height: 480px;
+  overflow: auto;
+}
+
+.tse-table-row {
+  align-items: center;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.05);
+  color: #b9c9d8;
+  font-size: 10px;
+}
+
+.tse-table-row:hover {
+  background: rgba(148, 163, 184, 0.03);
+}
+
+.tse-table-provincia {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #8ba0b6;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.tse-table-provincia svg {
+  color: #a78bfa;
+}
+
+.tse-table-canton i {
+  display: block;
+  height: 4px;
+  margin-top: 6px;
+  max-width: 180px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.08);
+  overflow: hidden;
+}
+
+.tse-table-canton i b {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: #38bdf8;
+}
+
+.tse-table-electores {
+  color: #f2f7fb;
+  font-size: 11px;
+  text-align: right;
+}
+
+.tse-table-codigo {
+  color: #71869c;
+  font-variant-numeric: tabular-nums;
+}
+
+.tse-table-distrito {
+  color: #d7e4ef;
+  font-weight: 700;
+}
+
+.tse-table-footer {
+  padding: 12px 20px;
+  border-top: 1px solid rgba(148, 163, 184, 0.06);
+  color: #5f748a;
+  font-size: 9px;
+  text-align: center;
+}
+
+.tse-empty {
+  padding: 46px 20px;
+  color: #71869c;
+  font-size: 10px;
+  text-align: center;
+}
+
+/* Procedencia */
+
+.tse-provenance-section {
+  padding: 30px 0 90px;
+}
+
+.tse-provenance {
+  display: grid;
+  max-width: 540px;
+  color: #8194aa;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.tse-provenance strong {
+  color: #d5e2ee;
+  margin-bottom: 6px;
+}
+
+.tse-responsible {
+  margin-top: 10px;
+  color: #5f748a;
+}
+
+@media (max-width: 900px) {
+  .tse-provincia-header {
+    grid-template-columns: 1fr 120px 24px;
+  }
+
+  .tse-provincia-track {
+    display: none;
+  }
+
+  .tse-hero-grid {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 720px) {
+  .tse-provincia-header,
+  .tse-canton-row {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+  }
+
+  .tse-provincia-metric,
+  .tse-canton-row strong {
+    text-align: left;
+  }
+
+  .tse-table-header:not(.tse-cantones-header),
+  .tse-distrito-row,
+  .tse-table-header.tse-cantones-header,
+  .tse-cantones-header + .tse-table-body > .tse-table-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .tse-explorador-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tse-search-input {
+    max-width: none;
+  }
+}
