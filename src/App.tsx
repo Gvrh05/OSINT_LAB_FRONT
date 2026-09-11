@@ -8,6 +8,7 @@ import About from './pages/About';
 import Search from './pages/Search';
 import OijPage from './OIJ/pages/OijPage';
 import TsePage from './TSE/pages/TsePage';
+import ZonasPage from './ZONAS/pages/ZonasPage';
 
 import './App.css';
 
@@ -24,6 +25,8 @@ function App() {
         <Route path="/oij" element={<OijPage />} />
 
         <Route path="/tse" element={<TsePage />} />
+
+        <Route path="/zonas" element={<ZonasPage />} />
 
         <Route path="/acerca" element={<About />} />
 

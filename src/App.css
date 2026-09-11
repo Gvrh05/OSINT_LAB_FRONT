@@ -3380,3 +3380,293 @@
     max-width: none;
   }
 }
+
+
+/* ======================================================
+   ZONAS (EXPLORADOR TERRITORIAL · OSM)
+====================================================== */
+
+.zonas-page { }
+
+.zonas-hero {
+  padding: 95px 0 70px;
+}
+
+.zonas-explorador-section {
+  margin: 22px 0 70px;
+}
+
+.zonas-heading {
+  margin-bottom: 24px;
+}
+
+.zonas-panel {
+  overflow: hidden;
+  border: 1px solid rgba(56, 189, 248, 0.13);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(13, 29, 47, 0.98), rgba(7, 18, 31, 0.98));
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+}
+
+.zonas-toolbar {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.09);
+  background: rgba(4, 13, 24, 0.32);
+}
+
+.zonas-select {
+  display: grid;
+  gap: 8px;
+}
+
+.zonas-select > span {
+  color: #657b91;
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.zonas-select select {
+  width: 100%;
+  min-width: 210px;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 9px;
+  color: #dce8f4;
+  background: #0b1b2d;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.zonas-select select:focus {
+  border-color: rgba(56, 189, 248, 0.55);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.08);
+  outline: none;
+}
+
+.zonas-select select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.zonas-refresh {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: auto;
+  height: 42px;
+  padding: 0 16px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 9px;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+  font-size: 9px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.zonas-refresh:hover {
+  border-color: rgba(56, 189, 248, 0.55);
+  background: rgba(56, 189, 248, 0.14);
+}
+
+.zonas-banner {
+  margin: 18px 20px 0;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.zonas-banner.error {
+  color: #fda4af;
+  background: rgba(244, 63, 94, 0.08);
+  border: 1px solid rgba(244, 63, 94, 0.2);
+}
+
+.zonas-banner.warning {
+  color: #fcd34d;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.zonas-banner-action {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: 1px solid currentColor;
+  border-radius: 7px;
+  color: inherit;
+  background: transparent;
+  font-size: 9px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.zonas-banner-action:hover {
+  background: rgba(148, 163, 184, 0.08);
+}
+
+.zonas-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 0;
+  min-height: 520px;
+}
+
+.zonas-map-box {
+  position: relative;
+  overflow: hidden;
+  min-height: 520px;
+  background: #0b1728;
+}
+
+.zonas-map {
+  height: 100%;
+  width: 100%;
+  min-height: 520px;
+  background: #0b1728;
+  font-family: inherit;
+}
+
+.zonas-map .leaflet-container {
+  background: #0b1728;
+}
+
+.zonas-map .leaflet-popup-content-wrapper,
+.zonas-map .leaflet-popup-tip {
+  background: #0e1c2f;
+  color: #eef4ff;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.zonas-map .leaflet-popup-content {
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.zonas-map .leaflet-popup-content strong {
+  color: #f2f7fb;
+}
+
+.zonas-map .leaflet-popup-content em {
+  color: #8194aa;
+  font-style: normal;
+}
+
+.zonas-map .leaflet-control-zoom a {
+  color: #dce8f4;
+  background: #0e1c2f;
+  border-color: rgba(148, 163, 184, 0.14);
+}
+
+.zonas-map .leaflet-control-zoom a:hover {
+  background: #12233a;
+}
+
+.zonas-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px;
+  border-left: 1px solid rgba(148, 163, 184, 0.09);
+  background: rgba(4, 13, 24, 0.32);
+}
+
+.zonas-aside h3 {
+  font-size: 20px;
+  letter-spacing: -0.4px;
+}
+
+.zonas-aside-muted {
+  color: #73879d;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.zonas-aside-status {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.zonas-summary {
+  overflow: hidden;
+  margin-top: 4px;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 12px;
+  background: rgba(11, 27, 45, 0.6);
+}
+
+.zonas-summary-title {
+  padding: 11px 14px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+  color: #60758b;
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.zonas-summary-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.05);
+  color: #b9c9d8;
+  font-size: 10px;
+}
+
+.zonas-summary-row:last-child {
+  border-bottom: 0;
+}
+
+.zonas-summary-row strong {
+  margin-left: auto;
+  color: #e8f1fa;
+  font-size: 11px;
+}
+
+.zonas-dot {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-radius: 50%;
+}
+
+.zonas-provenance {
+  margin-top: auto;
+}
+
+@media (max-width: 900px) {
+  .zonas-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .zonas-aside {
+    border-left: 0;
+    border-top: 1px solid rgba(148, 163, 184, 0.09);
+  }
+}
+
+@media (max-width: 720px) {
+  .zonas-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .zonas-select select {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .zonas-refresh {
+    margin-left: 0;
+  }
+}
