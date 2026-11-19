@@ -1,0 +1,46 @@
+name: Playwright - integración OSINT
+on:
+  push:
+    branches: [develop, main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Frontend bajo prueba
+        uses: actions/checkout@v4
+        with:
+          path: OSINT_LAB_FRONT
+      - name: Backend real de OSINT
+        uses: actions/checkout@v4
+        with:
+          repository: Gvrh05/OSINT_LAB_BACK
+          ref: develop
+          path: OSINT_LAB_BACK
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: corepack enable
+      - name: Instalar y compilar backend
+        working-directory: OSINT_LAB_BACK
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm build
+      - name: Instalar frontend y Chromium
+        working-directory: OSINT_LAB_FRONT
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm exec playwright install --with-deps chromium
+      - name: E2E - levanta backend y frontend en segundo plano
+        working-directory: OSINT_LAB_FRONT
+        continue-on-error: true
+        run: pnpm test:e2e
+      - name: Trazas de errores
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: osint-e2e-traces
+          path: OSINT_LAB_FRONT/test-results/
+          if-no-files-found: ignore
