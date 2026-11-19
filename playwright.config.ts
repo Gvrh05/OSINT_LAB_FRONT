@@ -13,7 +13,7 @@ export default defineConfig({
     {
       command: 'pnpm --dir ../OSINT_LAB_BACK start:prod',
       url: 'http://127.0.0.1:43120/api/health',
-      env: { PORT: '43120', FRONTEND_URL: 'http://127.0.0.1:43121', TSE_AUTOLOAD: 'false' },
+      env: { PORT: '43120', FRONTEND_URL: 'http://127.0.0.1:43121', TSE_AUTOLOAD: 'false', TSE_DOWNLOAD_ENABLED: 'false' },
       reuseExistingServer: true,
       timeout: 45_000,
     },
