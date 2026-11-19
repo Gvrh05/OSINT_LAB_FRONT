@@ -1,4 +1,4 @@
-import { ArrowRight, Database, Landmark, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Landmark, MapPinned, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Sources = () => (
@@ -9,7 +9,7 @@ const Sources = () => (
         <h1>Datos con procedencia clara.</h1>
         <p>Cada módulo identifica la institución responsable y transforma su información para facilitar la consulta.</p>
       </div>
-      <div className="heading-metric"><strong>2</strong><span>fuentes activas</span></div>
+      <div className="heading-metric"><strong>3</strong><span>fuentes activas</span></div>
     </header>
 
     <div className="source-grid">
@@ -31,13 +31,14 @@ const Sources = () => (
         <div className="source-card-footer">Explorar fuente <ArrowRight size={17} /></div>
       </Link>
 
-      <article className="source-card source-card-disabled">
-        <div className="source-card-top"><div className="source-card-icon"><Database size={24} /></div><span className="source-card-state">Pendiente</span></div>
-        <span className="source-institution">PRÓXIMA INTEGRACIÓN</span>
-        <h2>Fuente 3</h2>
-        <p>Espacio reservado para incorporar otra fuente pública desarrollada por el equipo.</p>
-        <div className="source-placeholder">Integración en preparación</div>
-      </article>
+      <Link to="/zonas" className="source-card source-card-active">
+        <div className="source-card-top"><div className="source-card-icon"><MapPinned size={24} /></div><span className="source-card-state active"><i />Activa</span></div>
+        <span className="source-institution">OPENSTREETMAP</span>
+        <h2>Explorador territorial</h2>
+        <p>Infraestructura y puntos de interés por cantón consultados a la API pública de Overpass.</p>
+        <div className="source-tags"><span>API de Overpass</span><span>84 cantones</span><span>Licencia ODbL</span></div>
+        <div className="source-card-footer">Explorar fuente <ArrowRight size={17} /></div>
+      </Link>
     </div>
   </div>
 );

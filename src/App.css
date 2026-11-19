@@ -3380,3 +3380,186 @@
     max-width: none;
   }
 }
+
+/* ======================================================
+   EXPLORADOR TERRITORIAL (OSM)
+====================================================== */
+
+.zonas-page .heading-metric {
+  min-width: 185px;
+}
+
+.zonas-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.zonas-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #71869c;
+}
+
+.zonas-controls select {
+  min-width: 230px;
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 9px;
+  background: #0c1a2e;
+  color: #e2e8f0;
+  cursor: pointer;
+}
+
+.zonas-controls select:focus {
+  outline: none;
+  border-color: #38bdf8;
+}
+
+.zonas-retry {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 9px;
+  background: #0c1a2e;
+  color: #e2e8f0;
+  cursor: pointer;
+}
+
+.zonas-banner {
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.zonas-banner-action {
+  margin-left: auto;
+  padding: 6px 14px;
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.zonas-error {
+  background: rgba(190, 38, 30, 0.14);
+  border: 1px solid rgba(190, 38, 30, 0.45);
+  color: #fca5a5;
+}
+
+.zonas-warn {
+  background: rgba(202, 138, 4, 0.12);
+  border: 1px solid rgba(202, 138, 4, 0.4);
+  color: #fde68a;
+}
+
+.zonas-layout {
+  display: grid;
+  grid-template-columns: 1fr 325px;
+  gap: 18px;
+}
+
+.zonas-map-box {
+  height: 70svh;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  z-index: 0;
+}
+
+.zonas-panel {
+  background: rgba(148, 163, 184, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 14px;
+  padding: 20px;
+  overflow-y: auto;
+  max-height: 70svh;
+  color: #e2e8f0;
+}
+
+.zonas-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #38bdf8;
+}
+
+.zonas-panel-title h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #f8fafc;
+}
+
+.zonas-muted {
+  color: #71869c;
+  font-size: 14px;
+}
+
+.zonas-summary {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+  font-size: 14px;
+}
+
+.zonas-summary td {
+  padding: 7px 8px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.zonas-summary .num {
+  text-align: right;
+  font-weight: 700;
+  color: #7dd3fc;
+  font-variant-numeric: tabular-nums;
+}
+
+.zonas-provenance {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(148, 163, 184, 0.18);
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: #cbd5e1;
+}
+
+.zonas-provenance strong {
+  margin-bottom: 4px;
+  color: #f8fafc;
+}
+
+@media (max-width: 900px) {
+  .zonas-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .zonas-map-box {
+    height: 55svh;
+  }
+
+  .zonas-panel {
+    max-height: none;
+  }
+}
